@@ -21,6 +21,7 @@ export default function VerticalRotatingCubes() {
 
   return (
     <div className="relative flex min-h-screen items-center justify-center bg-white space-x-10">
+
       {/* Sidebar Controls */}
       <div className="mr-20 flex flex-col space-y-4 items-center">
         {[Calendar, User, Info, Headphones].map((Icon, i) => (
