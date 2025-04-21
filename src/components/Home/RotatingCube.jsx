@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function VerticalRotatingCubes() {
   const [face, setFace] = useState(0); // 0: Front, 1: Top, 2: Back, 3: Bottom
-  const size = 300;
+  const size = 350;
 
   const cubeStyles = {
     width: `${size}px`,
@@ -23,7 +23,7 @@ export default function VerticalRotatingCubes() {
     <div className="relative flex min-h-screen items-center justify-center bg-white space-x-10">
 
       {/* Sidebar Controls */}
-      <div className="mr-20 flex flex-col space-y-4 items-center">
+      <div className="mr-50 flex flex-col space-y-4 items-center">
         {[Calendar, User, Info, Headphones].map((Icon, i) => (
           <button
             key={i}
@@ -91,14 +91,15 @@ function CubeFaces({ styles, prefix = "", isImage = false }) {
     <>
       {faces.map((face, i) => (
         <div
-          key={i}
-          className="absolute flex items-center justify-center text-white text-2xl font-bold border border-gray-300 overflow-hidden bg-gray-100"
-          style={{
-            ...styles,
-            transform: transforms[i],
-            backgroundColor: i === 0 && !isImage ? "#f3f4f6" : "white", // Tailwind's gray-100 for the front face
-          }}
-        >
+        key={i}
+        className="absolute flex items-center justify-center text-white text-2xl font-bold overflow-hidden"
+        style={{
+          ...styles,
+          transform: transforms[i],
+          backgroundColor: !isImage ? "#f3f4f6" : "white",
+        }}
+      >
+      
           {/* Custom content for all faces */}
           {!isImage ? (
             <div className="p-6 text-center text-black space-y-3">

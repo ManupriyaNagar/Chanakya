@@ -4,7 +4,7 @@ export default function NexaVirtuShowcase() {
 
 
   return (
-    <section className="relative w-full bg-white py-10">
+    <section className="relative w-full bg-white mt-20">
       {/* Headings */}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-start">
         <h2 className="text-4xl font-semibold leading-snug text-black w-1/2">
