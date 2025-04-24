@@ -34,8 +34,8 @@ export default function TestimonialComponent() {
       <Card className="absolute top-10 right-76 w-50 shadow-xl z-10 bg-white/40 backdrop-blur-md border border-white/30 rounded-xl">
         <CardContent className="flex flex-col items-center text-center py-4">
           <Share2 className="w-5 h-5 text-black mb-2" />
-          <p className="text-xl font-semibold text-black">34k</p>
-          <p className="text-sm text-black/40">Of Happy Clients<br />Since 2018</p>
+          <p className="text-xl font-semibold text-black">350+</p>
+          <p className="text-sm text-black/40">Employment <br />Generation</p>
           <div className="flex -space-x-2 mt-2">
             <Image src="/hero.png" alt="User 1" width={24} height={24} className="rounded-full border border-white" />
             <Image src="/hero.png" alt="User 2" width={24} height={24} className="rounded-full border border-white" />
