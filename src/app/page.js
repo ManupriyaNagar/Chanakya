@@ -1,14 +1,14 @@
+import AnimatedSection from "@/components/Home/AnimatedSection";
 import CasesSlider from "@/components/Home/CasesSlider";
 import FeaturedCases from "@/components/Home/FeaturedCases";
 import HeroSection from "@/components/Home/Hero";
+import RotatingImageMarquee from "@/components/Home/Marqueelogos";
 import NexaVirtuFeatures from "@/components/Home/NextVertuFeature";
 import NexaVirtuShowcase from "@/components/Home/NextVirtuShowCase";
-import RotatingCube from "@/components/Home/RotatingCube";
-import Section from "@/components/Home/Section";
 import StatsStrip from "@/components/Home/StatsStrip";
 import TestimonialComponent from "@/components/Home/Testimonial";
-import TextMask from "@/components/TextMask/TextMask";
-import Image from "next/image";
+import VerticalRotatingCubes from "@/components/Home/VerticalRotatingCubes"
+
 
 export default function Home() {
   return (
@@ -19,10 +19,14 @@ export default function Home() {
       <StatsStrip/>
       <TestimonialComponent/>
       <NexaVirtuShowcase/>
-      <RotatingCube/>
+     
+      <VerticalRotatingCubes/>
+      <AnimatedSection/>
       <FeaturedCases/>
       <CasesSlider/>
       <NexaVirtuFeatures/>
+      <RotatingImageMarquee/>
+    
     </div>
   );
 }
