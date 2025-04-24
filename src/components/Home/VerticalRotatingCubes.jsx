@@ -55,7 +55,7 @@ export default function VerticalRotatingCubes() {
   const icons = [RoseIcon, User, Info, Headphones];
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center bg-white space-x-10">
+    <div className="relative flex min-h-[40vh] items-center justify-center  space-x-10">
       {/* Icon selectors */}
       <div className="mr-50 flex flex-col space-y-4 items-center">
         {icons.map((Icon, i) => (
@@ -72,7 +72,7 @@ export default function VerticalRotatingCubes() {
       </div>
 
       {/* Cubes */}
-      <div className="relative flex space-x-0" style={{ perspective: "1000px" }}>
+      <div className="relative flex space-x-0 mt-40" style={{ perspective: "1000px" }}>
         <div
           className="relative"
           style={{
@@ -100,7 +100,7 @@ export default function VerticalRotatingCubes() {
       </div>
 
       {/* Up/Down Buttons */}
-      <div className="absolute right-10 top-1/2 transform -translate-y-1/2 space-y-4 z-10">
+      <div className="absolute right-10 top-1/2 transform -translate-y-1/2 space-y-4 z-10 ">
         <button
           onClick={() => setFace((prev) => (prev - 1 + 4) % 4)}
           className="w-12 h-12 rounded-full bg-gray-200 hover:bg-orange-500 text-black hover:text-white flex items-center justify-center shadow transition"

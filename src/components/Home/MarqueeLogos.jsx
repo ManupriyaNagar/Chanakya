@@ -15,16 +15,16 @@ const imageSources = [
 
 export default function RotatingImageMarquee() {
   return (
-    <div className="bg-white py-20 ">
+    <div className="bg-white py-10 ">
       <Marquee gradient={false} speed={60} direction="left" loop={0}>
         {imageSources.map((src, i) => (
-          <div key={i} className="mx-4">
+          <div key={i} className="mx-4 py-20">
             <Image
               src={src}
               alt={`Image ${i + 1}`}
               width={200}
               height={200}
-              className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 "
+              className="rounded-3xl shadow-lg hover:scale-105 transition-transform duration-300 "
             />
           </div>
         ))}

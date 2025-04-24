@@ -52,16 +52,18 @@ const AboutTop = () => {
 
   return (
     <section
-      className="w-full bg-cover bg-center min-h-screen bg-red-900 opacity-90 "
+      className="w-full bg-cover bg-center    "
       style={{ backgroundImage: "url('/post.png')" }}
     >
-     <div className="absolute inset-0 bg-black bg-opacity-90 z-50"></div>   
+        
+
+      <div className=" text-black text-9xl "> </div>
       <div className="flex flex-col lg:flex-row h-full w-full">
       <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-16">
           <img
             src="/logo1.png"
             alt="Hero"
-            className="max-h-[350px] max-w-[7xl] object-contain mt-20 mr-4"
+            className="max-h-[350px] max-w-[7xl] object-contain mt-72 mr-36 "
           />
         </div>
         {/* Text Container */}
@@ -74,7 +76,7 @@ const AboutTop = () => {
             <span className="block">{splitText('in Politics,Governance & ')}</span>
             <span className="block">{splitText('Corporate Sectors')}</span>
           </h1>
-          <p
+          <p className="text-xl"
           
           >
             Urban Chanakya has emerged as a powerhouse specializing in brand strategy, creativity, election management, and technology solutions, featuring a highly skilled and talented team of designers, strategists, and creative and content experts.

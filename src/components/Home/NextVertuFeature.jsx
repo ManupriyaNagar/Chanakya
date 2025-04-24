@@ -3,6 +3,8 @@ import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+import { motion } from "framer-motion";
+
 const features = [
   {
     title: 'Election Management',
@@ -54,11 +56,21 @@ export default function NexaVirtuFeatures() {
               className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center text-white"
             >
               <div className="flex justify-center mb-4">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-16 h-16 object-contain"
-                />
+  
+
+<motion.img
+  src={feature.image}
+  alt={feature.title}
+  className="w-20 h-20 object-contain"
+  animate={{ scale: [1, 1.2, 1] }}
+  transition={{
+    duration: 2,
+    repeat: Infinity,
+    repeatType: "loop",
+    ease: "easeInOut",
+  }}
+/>
+
               </div>
               <h3 className="text-xl font-semibold mb-2">
                 {feature.title.split(/(?=[A-Z])/).join(' ')}

@@ -26,6 +26,7 @@ export default function Section() {
 
   return (
     <main>
+        <Header ref={headerRef} />
       {/* Fullscreen Video */}
       <section className="h-screen w-full relative overflow-hidden">
         <video
@@ -41,7 +42,7 @@ export default function Section() {
       </section>
 
       {/* Scrolls to Header when video ends */}
-      <Header ref={headerRef} />
+    
     </main>
   );
 }
