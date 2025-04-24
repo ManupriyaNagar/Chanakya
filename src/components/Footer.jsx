@@ -1,55 +1,110 @@
-'use client';
-
-import { Camera, Phone, Mail, MapPin } from 'lucide-react';
+// components/Footer.js
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer >
-      <div className="relative  mx-auto bg-white shadow-lg overflow-hidden">
-        {/* Yellow stripe */}
-        <div className="absolute bottom-0 left-0 w-full h-4 bg-orange-500" />
-        {/* Black curved block */}
-        <div className="absolute bottom-0 left-0 w-32 h-16 bg-gray-900 rounded-tr-full" />
-
-        <div className="relative z-10 px-6 py-8 flex flex-col lg:flex-row items-center lg:items-start">
-          {/* Photo placeholder */}
-          <div className="flex-shrink-0">
-            <div className="w-24 h-24 rounded-full border-4 border-orange-500 flex items-center justify-center overflow-hidden bg-gray-100">
-              <Camera className="w-8 h-8 text-gray-300" />
-            </div>
-          </div>
-
-          {/* Name & contact */}
-          <div className="mt-6 lg:mt-0 lg:ml-8 text-center lg:text-left">
-            <h2 className="text-2xl font-bold text-gray-800">
-              <span className="text-orange-500">Urabn Chanayak</span>
-            </h2>
-     
-
-            <ul className="mt-4 space-y-2 text-gray-500 text-sm">
-              <li className="flex items-center">
-                <Phone className="w-4 h-4 mr-2" />+91 00000 00000
-              </li>
-              <li className="flex items-center">
-                <Mail className="w-4 h-4 mr-2" />hello@urbanchanakya.in
-              </li>
-              <li className="flex items-center">
-                <MapPin className="w-4 h-4 mr-2" />Your Address Here
-              </li>
-            </ul>
-          </div>
-
-          {/* Brand info */}
-          <div className="mt-8 lg:mt-0 lg:ml-auto text-center lg:text-right">
-            <h3 className="text-xl font-semibold text-gray-800">Urban Chanakya</h3>
-            <p className="text-gray-500 mt-1">We create the impact</p>
-            <div className="flex justify-center lg:justify-end mt-3 space-x-2">
-              <span className="w-3 h-3 bg-orange-500 rounded-full" />
-              <span className="w-3 h-3 bg-orange-500 rounded-full" />
-              <span className="w-3 h-3 bg-orange-500 rounded-full" />
-            </div>
-          </div>
+    <footer className="bg-black text-white py-12 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Brand Section */}
+        <div>
+          {/* <h2 className="text-2xl font-bold">Urban Chanakya</h2> */}
+          <img src="/footer.png" alt="" />
+          <p className="mt-2 text-sm text-gray-300">
+            Strategic Political Consulting and Brand Management.
+          </p>
         </div>
+
+        {/* Navigation */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Company</h3>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li><a href="/about" className="hover:text-white">Home</a></li>
+            <li><a href="/careers" className="hover:text-white">Our Services</a></li>
+            <li><a href="/blog" className="hover:text-white">Portfolio</a></li>
+            <li><a href="/blog" className="hover:text-white">Impact</a></li>
+            <li><a href="/blog" className="hover:text-white">Blogs</a></li>
+          </ul>
+        </div>
+
+        {/* Services */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Services</h3>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li>Branding & Strategies</li>
+            <li>Election Management</li>
+            <li>Digital & Social Media</li>
+          </ul>
+        </div>
+
+        {/* Contact & Social */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Contact</h3>
+          <ul className="text-sm text-gray-300 space-y-2">
+            <li className="flex items-center gap-2">
+              <MapPin className="w-12 h-12" />
+              Address: 510, 5th Floor, Protech Centre, GS Rd, GMC Ward Number 44, Ganeshguri, Guwahati, Assam 781006
+
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone className="w-4 h-4" />
+              Phone: 0361 358 4834
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail className="w-4 h-4" />
+              info@urbanchanakya.in
+            </li>
+          </ul>
+
+          <div className="flex gap-0 mt-4">
+  {/* LinkedIn */}
+  <a href="#" aria-label="LinkedIn" className=" p-4 rounded-sm">
+    <Linkedin className="text-white w-6 h-6" />
+  </a>
+
+  {/* X (Twitter) */}
+  <a href="#" aria-label="X (Twitter)" className=" p-4 rounded-sm">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 1200 1227"
+      className="text-white w-6 h-6"
+    >
+      <path d="M1159.59 0H1001.1L601.36 537.65L200.9 0H0l441.58 598.55L0 1227h158.54l433.01-567.39L1000.45 1227H1200L753.94 636.94 1159.59 0Z" />
+    </svg>
+  </a>
+
+  {/* Instagram */}
+  <a href="#" aria-label="Instagram" className="p-4 rounded-sm ">
+    <Instagram className=" w-6 h-6 text-white" />
+  </a>
+
+  {/* Facebook */}
+  <a href="#" aria-label="Facebook" className=" p-4 rounded-sm">
+    <Facebook className="text-white w-6 h-6" />
+  </a>
+</div>
+
+
+          
+        </div>
+      </div>
+
+      {/* Bottom line */}
+      
+      <div className="mt-10 text-center text-lg text-gray-200 border-t border-gray-800 pt-6">
+        <div className="flex flex-row justify-between">
+<h1> POWERED BY <span className="text-orange-500"> RBSH STUDIO. </span></h1>
+<h1> © {new Date().getFullYear()} Urban Chanakya. All rights reserved.</h1>
+        </div>
+       
       </div>
     </footer>
   );

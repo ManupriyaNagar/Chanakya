@@ -19,10 +19,10 @@ const Header = forwardRef(function Header(_, ref) {
   return (
     <header
       ref={ref}
-      className="bg-white flex justify-between items-center px-8 py-4 shadow-sm"
+      className="bg-white flex justify-between items-center px-8 shadow-sm"
     >
       {/* Logo */}
-      <img src="/header.png" alt="Logo" className="w-48 h-28" />
+      <img src="/m.png" alt="Logo" className='w-32' />
 
       {/* Navigation */}
       <nav className="flex space-x-8 items-center text-black">

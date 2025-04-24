@@ -1,54 +1,74 @@
 "use client"
-import React, { useEffect, useRef } from "react";
+import React, { useEffect,useState, useRef } from "react";
 import { gsap } from 'gsap';
 
 const AboutTop = () => {
-   
-  const h1Ref = useRef(null);
+    const phrases = [" Politics.", " Governance.", " Corporate Sectors."];
+    const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+    const h1Ref = useRef(null);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      }, 700);
+  
+      return () => clearInterval(interval);
+    }, [phrases.length]);
+  
+    useEffect(() => {
+      if (!h1Ref.current) return;
+  
+      const letters = h1Ref.current.querySelectorAll('.letter');
+      gsap.set(letters, { opacity: 1 });
+  
+      const tl = gsap.timeline({
+        repeat: -1,
+        repeatDelay: 5,
+      });
+  
+      tl.to(letters, {
+        duration: 0.05,
+        opacity: 0,
+        stagger: {
+          each: 0.05,
+          from: 'end',
+          ease: 'none',
+        },
+      });
+  
+      tl.to(letters, {
+        duration: 0.05,
+        opacity: 1,
+        stagger: {
+          each: 0.05,
+          from: 'start',
+          ease: 'none',
+        },
+      }, ">");
+  
+      return () => {
+        tl.kill();
+      };
+    }, []);
 
-  useEffect(() => {
-    if (!h1Ref.current) return;
-
-    const letters = h1Ref.current.querySelectorAll('.letter');
-    gsap.set(letters, { opacity: 1 });
-
-    const tl = gsap.timeline({
-      repeat: -1,
-      repeatDelay: 5,
-    });
-
-    tl.to(letters, {
-      duration: 0.05,
-      opacity: 0,
-      stagger: {
-        each: 0.05,
-        from: 'end',
-        ease: 'none',
-      },
-    });
-
-    tl.to(letters, {
-      duration: 0.05,
-      opacity: 1,
-      stagger: {
-        each: 0.05,
-        from: 'start',
-        ease: 'none',
-      },
-    }, ">");
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
+ 
   const splitText = (text) => {
-    return text.split('').map((char, index) => (
-      <span key={index} className="letter text-black">
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ));
+    return text.split('').map((char, index) => {
+      if (char === ' ') {
+        return (
+          <span key={index} className="letter text-black">
+            &nbsp;
+          </span>
+        );
+      }
+      return (
+        <span key={index} className="letter text-black">
+          {char}
+        </span>
+      );
+    });
   };
+
 
   return (
     <section
@@ -68,14 +88,12 @@ const AboutTop = () => {
         </div>
         {/* Text Container */}
         <div className="flex flex-col justify-center w-full lg:w-1/2 p-4 md:p-16 mr-10 ">
-          <h1
-            className="text-3xl md:text-5xl font-bold leading-tight mb-4 mr-10"
-            ref={h1Ref}
-          >
-            {splitText('Creating an Impact')}
-            <span className="block">{splitText('in Politics,Governance & ')}</span>
-            <span className="block">{splitText('Corporate Sectors')}</span>
+          <h1 className="text-5xl font-bold">Creating an Impact in
+            <span className="text-orange-500">{phrases[currentPhraseIndex]}</span>
+
+            
           </h1>
+        
           <p className="text-xl"
           
           >
