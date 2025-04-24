@@ -2,6 +2,7 @@
 import { Calendar, User, Info, Headphones } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import "./cube.css"; // Add this if you move animation styles to a separate CSS file
 
 export default function VerticalRotatingCubes() {
   const [face, setFace] = useState(0); // 0: Front, 1: Top, 2: Back, 3: Bottom
@@ -59,7 +60,7 @@ export default function VerticalRotatingCubes() {
         </div>
       </div>
 
-      {/* Up/Down Arrows */}
+      {/* Arrows (Optional) */}
       <div className="absolute right-10 top-1/2 transform -translate-y-1/2 space-y-4 z-10">
         <button className="w-12 h-12 rounded-full bg-gray-200 hover:bg-orange-500 text-black hover:text-white flex items-center justify-center shadow transition">
           ↑
@@ -72,14 +73,14 @@ export default function VerticalRotatingCubes() {
   );
 }
 
-//Cube Face Component
 function CubeFaces({ styles, prefix = "", isImage = false }) {
-    const faces = [
-        { label: "Front", img: "/box1.png", icon: Calendar, heading: "Welcome to the Front", para: "This is the front side of the cube." },
-        { label: "Back", img: "/box2.png", icon: User, heading: "User Info", para: "This is the back side of the cube." },
-        { label: "Top", img: "/box3.png", icon: Info, heading: "Information", para: "This is the top side of the cube." },
-        { label: "Bottom", img: "/box4.png", icon: Headphones, heading: "Audio", para: "This is the bottom side of the cube." },
-      ];
+  const faces = [
+    { label: "Front", img: "/box1.png", icon: Calendar, heading: "Welcome", para: "This is the front side of the cube." },
+    { label: "Back", img: "/box2.png", icon: User, heading: "User Info", para: "This is the back side of the cube." },
+    { label: "Top", img: "/box3.png", icon: Info, heading: "Information", para: "This is the top side of the cube." },
+    { label: "Bottom", img: "/box4.png", icon: Headphones, heading: "Audio", para: "This is the bottom side of the cube." },
+  ];
+
   const transforms = [
     `rotateY(0deg) translateZ(${styles.width.replace("px", "") / 2}px)`,
     `rotateY(180deg) translateZ(${styles.width.replace("px", "") / 2}px)`,
@@ -91,21 +92,23 @@ function CubeFaces({ styles, prefix = "", isImage = false }) {
     <>
       {faces.map((face, i) => (
         <div
-        key={i}
-        className="absolute flex items-center justify-center text-white text-2xl font-bold overflow-hidden"
-        style={{
-          ...styles,
-          transform: transforms[i],
-          backgroundColor: !isImage ? "#f3f4f6" : "white",
-        }}
-      >
-      
-          {/* Custom content for all faces */}
+          key={i}
+          className="absolute flex items-center justify-center text-white overflow-hidden"
+          style={{
+            ...styles,
+            transform: transforms[i],
+            backgroundColor: !isImage ? "#f3f4f6" : "white",
+          }}
+        >
           {!isImage ? (
-            <div className="p-6 text-center text-black space-y-3">
-              <face.icon className="w-10 h-10 mx-auto text-orange-500" />
-              <h2 className="text-xl font-semibold">{face.heading}</h2>
-              <p className="text-sm text-gray-700">{face.para}</p>
+            <div className="flex flex-col items-center justify-center text-black w-full h-full p-4 space-y-6">
+              <face.icon className="w-10 h-10 text-orange-500 mb-4" />
+
+              <h2 className="text-[120px] font-bold animate-slide-left whitespace-nowrap">
+                {face.heading}
+              </h2>
+
+              <p className="text-sm text-gray-700 text-center max-w-[80%]">{face.para}</p>
             </div>
           ) : (
             <div
@@ -130,18 +133,8 @@ function CubeFaces({ styles, prefix = "", isImage = false }) {
               />
             </div>
           )}
-           {/* <span className={`text-black`}>{face.label + prefix}</span>
-          <Image
-          src={face.img}
-          alt={`${face.label}${prefix}`}
-          width={styles.width.replace("px", "")}
-          height={styles.height.replace("px", "")}
-          className="object-cover w-full h-full"
-        /> */}
         </div>
       ))}
     </>
-   
   );
 }
-
