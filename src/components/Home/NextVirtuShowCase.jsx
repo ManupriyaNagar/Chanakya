@@ -4,11 +4,11 @@ export default function NexaVirtuShowcase() {
 
 
   return (
-    <section className="relative w-full bg-white mt-20">
+    <section className="relative w-full bg-white py-20" >
       {/* Headings */}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-start">
         
-        <h2 className="text-5xl font-semibold leading-snug text-black w-1/2 uppercase">
+        <h2 className="text-5xl font-semibold   text-black w-1/2   ">
         Highlighting Our Most  <br />Influential Campaigns
         </h2>
 

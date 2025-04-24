@@ -16,7 +16,7 @@ const ImageSlider = ({ images }) => {
   }, [images]);
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative x">
       {images.map((img, idx) => (
         <Image
           key={idx}
@@ -36,12 +36,12 @@ export default function ImageSliderSection() {
   return (
     <div className="flex h-[80vh] gap-x-4 bg-white">
       {/* Left Section */}
-      <div className="w-3/2 h-[80vh] relative rounded-xl overflow-hidden">
+      <div className="w-3/2 h-[80vh] relative rounded-xl overflow-hidden px-10">
         <ImageSlider images={imagesLeft} />
       </div>
 
       {/* Right Section */}
-      <div className="w-3/2 h-[80vh] relative rounded-xl overflow-hidden">
+      <div className="w-3/2 h-[80vh] relative rounded-xl overflow-hidden px-10">
         <ImageSlider images={imagesRight} />
       </div>
     </div>

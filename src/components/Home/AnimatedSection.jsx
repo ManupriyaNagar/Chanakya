@@ -79,7 +79,12 @@ const AboutTop = () => {
 
       <div className=" text-black text-9xl "> </div>
       <div className="flex flex-col lg:flex-row h-full w-full">
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-16">
+
+
+      <div className="w-full  flex flex-col items-center justify-center p-4 md:p-16 ">
+      <h1 className="text-5xl font-bold">Creating an Impact in
+            <span className="text-orange-500">{phrases[currentPhraseIndex]}</span> 
+          </h1>
           <img
             src="/logo1.png"
             alt="Hero"
@@ -87,16 +92,20 @@ const AboutTop = () => {
           />
         </div>
         {/* Text Container */}
-        <div className="flex flex-col justify-center w-full lg:w-1/2 p-4 md:p-16 mr-10 mb-60 ">
-          <h1 className="text-5xl font-bold">Creating an Impact in
-            <span className="text-orange-500">{phrases[currentPhraseIndex]}</span> 
-          </h1>
+        <div className="flex  justify-between w-full  p-4 md:p-16 mr-10  ">
+        <div>
+       
         
-          <p className="text-xl mt-6"
+        </div>
+     
+        <div>
+        <p className="text-xl mt-6"
           
           >
             Urban Chanakya has emerged as a powerhouse specializing in brand strategy, creativity, election management, and technology solutions, featuring a highly skilled and talented team of designers, strategists, and creative and content experts.
           </p>
+        </div>
+         
         </div>
        
       </div>
