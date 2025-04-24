@@ -83,18 +83,16 @@ const AboutTop = () => {
           <img
             src="/logo1.png"
             alt="Hero"
-            className="max-h-[350px] max-w-[7xl] object-contain mt-72 mr-36 "
+            className="max-h-[450px] max-w-[7xl] object-contain mt-72 mr-36 "
           />
         </div>
         {/* Text Container */}
-        <div className="flex flex-col justify-center w-full lg:w-1/2 p-4 md:p-16 mr-10 ">
+        <div className="flex flex-col justify-center w-full lg:w-1/2 p-4 md:p-16 mr-10 mb-60 ">
           <h1 className="text-5xl font-bold">Creating an Impact in
-            <span className="text-orange-500">{phrases[currentPhraseIndex]}</span>
-
-            
+            <span className="text-orange-500">{phrases[currentPhraseIndex]}</span> 
           </h1>
         
-          <p className="text-xl"
+          <p className="text-xl mt-6"
           
           >
             Urban Chanakya has emerged as a powerhouse specializing in brand strategy, creativity, election management, and technology solutions, featuring a highly skilled and talented team of designers, strategists, and creative and content experts.
