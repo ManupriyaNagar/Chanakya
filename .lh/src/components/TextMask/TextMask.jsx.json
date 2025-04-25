@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/TextMask/TextMask.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1745572428805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1745572428805,
+            "name": "Commit-0",
+            "content": "\"use client\";\nimport { useEffect, useRef } from \"react\";\nimport styles from \"./textMask.module.css\";\n\nexport default function TextMask() {\n  const container = useRef(null);\n  const stickyMask = useRef(null);\n\n  const initialMaskSize = 0.8; // 80%\n  const targetMaskSize = 1.45; // 145% scale, relative to 1\n\n  useEffect(() => {\n    requestAnimationFrame(animate);\n  }, []);\n\n  const animate = () => {\n    const progress = getScrollProgress();\n    const maskSize = initialMaskSize + (targetMaskSize - initialMaskSize) * progress;\n\n    if (stickyMask.current) {\n      stickyMask.current.style.maskSize = `${maskSize * 100}%`;\n      stickyMask.current.style.webkitMaskSize = `${maskSize * 100}%`;\n    }\n\n    requestAnimationFrame(animate);\n  };\n\n  const getScrollProgress = () => {\n    const rect = container.current.getBoundingClientRect();\n    const scrollTop = window.scrollY;\n    const containerTop = rect.top + scrollTop;\n    const containerHeight = container.current.offsetHeight;\n    const winHeight = window.innerHeight;\n\n    const progress = Math.min(\n      Math.max((scrollTop - containerTop + winHeight) / (containerHeight + winHeight), 0),\n      1\n    );\n\n    return progress;\n  };\n\n  return (\n    <main className={styles.main}>\n      <div ref={container} className={styles.container}>\n        <div ref={stickyMask} className={styles.stickyMask}>\n          <video autoPlay muted loop>\n            <source src=\"/media/genero25.webm\" type=\"video/webm\" />\n          </video>\n        </div>\n      </div>\n    </main>\n  );\n}\n"
+        }
+    ]
+}

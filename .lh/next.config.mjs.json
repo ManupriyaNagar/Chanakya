@@ -1,0 +1,18 @@
+{
+    "sourceFile": "next.config.mjs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1745572045393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1745572045393,
+            "name": "Commit-0",
+            "content": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n    output: 'export', // Required for static export\n    distDir: 'build', // Optional: where .next is generated\n    trailingSlash: true, // Optional: useful for static hosts\n  };\n  \n  export default nextConfig;\n  "
+        }
+    ]
+}

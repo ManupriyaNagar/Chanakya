@@ -1,7 +1,7 @@
 import "./globals.css";
 import Section from "@/components/Home/Section";
 import Footer from "@/components/Footer";
-import ScrollProvider from "@/components/ScrollProvider";
+
 
 export const metadata = {
   title: "Create Next App",
@@ -12,11 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ScrollProvider>
-          <Section data-scroll-section />
+ 
+          <Section  />
           {children}
-          <Footer data-scroll-section />
-        </ScrollProvider>
+          <Footer  />
+
       </body>
     </html>
   );

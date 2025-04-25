@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
-    trailingSlash: true, // This generates folders with index.html inside them
-    experimental: {
-      appDir: true,
-    },
+    output: 'export', // Required for static export
+    distDir: 'build', // Optional: where .next is generated
+    trailingSlash: true, // Optional: useful for static hosts
   };
   
   export default nextConfig;
+  

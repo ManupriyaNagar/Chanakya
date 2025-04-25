@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/TextMask/textMask.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1745572436162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1745572436162,
+            "name": "Commit-0",
+            "content": ".main {\n  z-index: 1;\n}\n\n.container {\n  position: relative;\n  height: 200vh;\n  z-index: 1;\n}\n\n.container::before {\n  content: \"\";\n  position: absolute;\n  inset: 0;\n  opacity: 0.4;\n  z-index: -1;\n}\n\n.stickyMask {\n  display: flex;\n  overflow: hidden;\n  position: sticky;\n  top: 0;\n  height: 100vh;\n  background-color: black;\n  align-items: center;\n  justify-content: center;\n  -webkit-mask-image: url('/media/mask1.svg');\n  -webkit-mask-position: 63% 37%;\n  -webkit-mask-repeat: no-repeat;\n  -webkit-mask-size: 80%;\n\n  mask-image: url('/media/mask1.svg');\n  mask-position: 63% 37%;\n  mask-repeat: no-repeat;\n  mask-size: 80%;\n}\n\n.stickyMask video {\n  height: 100%;\n  width: 100%;\n  object-fit: cover;\n}\n"
+        }
+    ]
+}

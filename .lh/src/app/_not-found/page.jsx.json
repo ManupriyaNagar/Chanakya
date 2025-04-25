@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/_not-found/page.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1745572637105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1745572637105,
+            "name": "Commit-0",
+            "content": "\"use client\";\n\nexport default function NotFoundPage() {\n  return (\n    <div className=\"text-center py-20\">\n      <h1 className=\"text-4xl font-bold\">Oops! Page Not Found</h1>\n      <p className=\"mt-4 text-gray-500\">Sorry, we couldn’t find the page you’re looking for.</p>\n    </div>\n  );\n}\n"
+        }
+    ]
+}
